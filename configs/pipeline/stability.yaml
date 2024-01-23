@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - /trainer: default
+  - /loader: default
+  - /dataset: stability
+  - /task: regression_2
+  - /optimizer: adamw
+  - /scheduler: cosine
+  - /callbacks: [base, checkpoint]
+
+train:
+  monitor: val/spearman_rho # Needed for plateau scheduler
+  mode: max
+
+encoder: null
+
+# we need this for classification!
+decoder:
+  _name_: nd
+  mode: pool
+
+wandb:
+  project: stability
