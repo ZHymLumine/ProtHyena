@@ -9,8 +9,25 @@
 Welcome to the ProtHyena repo! 
 
 
-  
+
 Credit: much of the code is forked and extended from [HyenaDNA](https://github.com/HazyResearch/hyena-dna) and [Safari](https://github.com/HazyResearch/safari).
+
+## Dependencies
+<a name="dependencies"></a>
+
+For this repo, let's start with the dependancies that are needed.
+
+- clone repo, cd into it
+
+```
+git clone --recurse-submodules https://github.com/HazyResearch/hyena-dna.git && cd hyena-dna
+```
+
+- create a conda environment, with Python 3.8+
+
+```
+conda create -n hyena-dna python=3.8
+```
 
 
 ## Citation
