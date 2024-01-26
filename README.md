@@ -10,7 +10,7 @@ Welcome to the ProtHyena repo!
 
 
   
-Credit: much of the code is forked and extended from [S4](https://github.com/HazyResearch/state-spaces) and [Safari](https://github.com/HazyResearch/safari).
+Credit: much of the code is forked and extended from [HyenaDNA](https://github.com/HazyResearch/hyena-dna) and [Safari](https://github.com/HazyResearch/safari).
 
 
 ## Citation
