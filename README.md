@@ -53,6 +53,13 @@ pip install -e . --no-build-isolation
 cd csrc/layer_norm && pip install . --no-build-isolation
 ```
 
+## Pretraing
+<a name="pretrain"></a>
+
+- to pretrain a prothyena model
+```
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hyena trainer.devices=1
+```
 ## Citation
 
 Feel free to cite us if you find our work useful :)  
