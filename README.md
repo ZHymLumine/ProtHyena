@@ -53,7 +53,7 @@ pip install -e . --no-build-isolation
 cd csrc/layer_norm && pip install . --no-build-isolation
 ```
 
-## Pretraing
+## Pretrain
 <a name="pretrain"></a>
 
 - to pretrain a prothyena model
