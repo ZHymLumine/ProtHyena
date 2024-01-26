@@ -60,8 +60,21 @@ cd csrc/layer_norm && pip install . --no-build-isolation
 ```
 CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hyena trainer.devices=1
 ```
-## Citation
 
+## Fine-tuning
+<a name="fine-tuning"></a>
+
+- Disorder
+```
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/disorder trainer.devices=1
+```
+- Remote Homology
+```
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/homology trainer.devices=1
+```
+and etc.
+
+## Citation
 Feel free to cite us if you find our work useful :)  
 ```
 @article {Zhang2024.01.18.576206,
