@@ -5,7 +5,7 @@
 - [biorxiv](https://www.biorxiv.org/content/10.1101/2024.01.18.576206v1)
 
 - [Dataset](https://drive.google.com/drive/folders/1oNBFGQw3F9aoOYOQSB71PS1sfhhgwyzm?usp=sharing)
-- [Model checkpoint]()
+- [Model checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs-5XUxrngbc-z/view?usp=sharing)
 
 ## Intro
 
