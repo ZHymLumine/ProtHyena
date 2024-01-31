@@ -70,11 +70,11 @@ Download the  [checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs
 
 - Disorder
 ```
-CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/disorder trainer.devices=1
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/disorder trainer.devices=1 train.prepretrained_model_path=/path/to/the/checkpoint
 ```
 - Remote Homology
 ```
-CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/homology trainer.devices=1
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/homology trainer.devices=1 train.prepretrained_model_path=/path/to/the/checkpoint
 ```
 and etc.
 
