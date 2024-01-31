@@ -79,7 +79,7 @@ CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/homology tr
 and etc.
 
 - To fine-tune on a new downstream task
-add new dataset, pipeline and experienment configs.
+add new dataset for evaluation, create new configs in `pipeline`, `experienment` and `dataset` folders. You can follow ours examples in those folders.
 
 ## Citation
 Feel free to cite us if you find our work useful :)  
