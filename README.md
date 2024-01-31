@@ -65,6 +65,7 @@ CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hye
 ```
 
 ## Fine-tuning
+Download the  [checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs-5XUxrngbc-z/view?usp=sharing)
 <a name="fine-tuning"></a>
 
 - Disorder
