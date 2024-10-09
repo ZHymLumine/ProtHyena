@@ -72,25 +72,61 @@ CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hye
 
 ## Fine-tuning
 
-Download the [checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs-5XUxrngbc-z/view?usp=sharing)
-<a name="fine-tuning"></a>
+1. Download the [checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs-5XUxrngbc-z/view?usp=sharing) and put it into `checkpoint` folder
+2. download dataset and put them into `data` folder
+   <a name="fine-tuning"></a>
 
-- Disorder
+3. For specific tasks, run the command below:
 
-```
-CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/disorder trainer.devices=1 train.prepretrained_model_path=/path/to/the/checkpoint
-```
+   - Fluorescence
 
-- Remote Homology
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/fluorescence trainer.devices=1
+   ```
 
-```
-CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/homology trainer.devices=1 train.prepretrained_model_path=/path/to/the/checkpoint
-```
+   - Stability
 
-and etc.
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/stability trainer.devices=1
+   ```
+
+   - Neuropeptide cleavage
+
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/cleavage trainer.devices=1
+   ```
+
+   - Disorder
+
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/disorder trainer.devices=1
+   ```
+
+   - Signal peptide
+
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/signalP trainer.devices=1
+   ```
+
+   - Solubility
+
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/solubility trainer.devices=1
+   ```
+
+   you can change the batch size through command line.
+   e.g
+
+   ```
+   CUDA_VISIBLE_DEVICES=0 python -m train experiment=prot14m/stability trainer.devices=1 dataset.batch_size=128 dataset.batch_size_eval=128
+   ```
+
+   or you can set these parameters in `configs/experiment/prot14m/{task}.yaml` for specific task.
 
 - To fine-tune on a new downstream task
-  add new dataset for evaluation, create new configs in `pipeline`, `experienment` and `dataset` folders. You can follow ours examples in those folders.
+  you need to create new config files in `pipeline`, `experienment` and `dataset` folders. You can follow ours examples in those folders.
+
+## Downstream Inference
 
 ## Citation
 
