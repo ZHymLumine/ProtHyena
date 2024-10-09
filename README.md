@@ -53,13 +53,6 @@ git submodule update --init
 pip install -e . --no-build-isolation
 ```
 
-- optional fused layers for speed (takes a bit of time)
-
-```
-# from inside flash-attn/
-cd csrc/layer_norm && pip install . --no-build-isolation
-```
-
 ## Pretrain
 
 <a name="pretrain"></a>
