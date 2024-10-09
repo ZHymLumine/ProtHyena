@@ -22,19 +22,21 @@ For this repo, let's start with the dependancies that are needed.
 - clone repo, cd into it
 
 ```
-git clone --recurse-submodules https://github.com/ZHymLumine/ProtHyena.git && cd ProtHyena
+git clone https://github.com/ZHymLumine/ProtHyena.git
 ```
 
-- create a conda environment, with Python 3.8+
+if you fail to run the command, you may need install [git lfs](https://git-lfs.com/) for cloning large files. Or you can just downdoad the zip file.
+
+- create a conda environment, with Python 3.8
 
 ```
 conda create -n prot-hyena python=3.8
 ```
 
-- The repo is developed with Pytorch 1.13, using cuda 11.7
+- The repo is developed with Pytorch 2.4, using cuda 12.4
 
 ```
-conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
 ```
 
 - install requirements:
@@ -46,18 +48,14 @@ pip install -r requirements.txt
 - install Flash Attention, these [notes](https://github.com/HazyResearch/safari#getting-started) will be helpful.
 
 ```
-cd prot-hyena
-git submodule update --init
+cd ProtHyena
 cd flash-attention
-git submodule update --init
 pip install -e . --no-build-isolation
 ```
 
 ## Pretrain
 
-<a name="pretrain"></a>
-
-- to pretrain a prothyena model
+- to pretrain a prothyena model, in `ProtHyena` folder, run
 
 ```
 CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hyena trainer.devices=1
@@ -65,9 +63,10 @@ CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/prot14m_hye
 
 ## Fine-tuning
 
+Note: we have provided the pretrained checkpoint and dataset in the `checkpoint` and `data` folders in this repo for your convenience.
+
 1. Download the [checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs-5XUxrngbc-z/view?usp=sharing) and put it into `checkpoint` folder
-2. download dataset and put them into `data` folder
-   <a name="fine-tuning"></a>
+2. download dataset (or use the dataset in `data` folder
 
 3. For specific tasks, run the command below:
 
