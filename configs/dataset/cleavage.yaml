@@ -1,0 +1,17 @@
+_name_: cleavage
+dataset_name: cleavage
+max_length: 1024
+dest_path: /raid_elmo/home/lr/zym/data/protein_data/fine_tuning/cleavage
+tokenizer_name: char
+cache_dir: null
+add_eos: false
+batch_size: 256 # per GPU
+batch_size_eval: 256
+num_workers: 4 # For preprocessing only
+shuffle: True
+pin_memory: True
+train_len: 2727
+__l_max: ${.max_length}
+use_padding: True
+padding_side: "left"
+rc_aug: False

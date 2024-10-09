@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - /trainer: default
+  - /loader: default
+  - /dataset: phrog
+  - /task: multiclass_classification
+  - /optimizer: adamw
+  - /scheduler: plateau
+  - /callbacks: [base, checkpoint]
+
+train:
+  monitor: val/f1_macro # Needed for plateau scheduler
+  mode: max
+
+encoder: null
+
+# we need this for classification!
+decoder:
+  _name_: nd
+  mode: pool
+
+wandb:
+  project: phrog
