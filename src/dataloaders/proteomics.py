@@ -13,7 +13,7 @@ from src.dataloaders.fault_tolerant_sampler import FaultTolerantDistributedSampl
 from src.dataloaders.datasets.hg38_char_tokenizer import CharacterTokenizer
 from src.dataloaders.datasets.mlm_char_tokenizer import MLMCharacterTokenizer
 from src.dataloaders.datasets.bpe_tokenizer import BPETokenizer
-from src.dataloaders.datasets.protein_bench_dataset import ProteinLocationDataset, SolubilityDataset, HomologyDataset, DisorderDataset, FluorescenceDataset, StabilityDataset, SecondaryStructureDataset, FoldClassDataset, SignalPeptideDataset, CleavageDataset, PhrogDataset, TCRDataset
+from src.dataloaders.datasets.protein_bench_dataset import ProteinLocationDataset, SolubilityDataset, HomologyDataset, DisorderDataset, FluorescenceDataset, StabilityDataset, SecondaryStructureDataset, FoldClassDataset, SignalPeptideDataset, CleavageDataset, PhrogDataset
 from src.dataloaders.datasets.prot14m_dataset import Prot14MDataset
 from src.dataloaders.datasets.prot14m_dataset import Prot14MDatasetMLM
 

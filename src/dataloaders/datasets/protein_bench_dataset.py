@@ -335,10 +335,6 @@ class FoldClassDataset(Dataset):
         self.d_output = d_output  # needed for decoder to grab
         self.rc_aug = rc_aug
         self.return_mask = return_mask
-
-        # base_path = Path(dest_path)  / split
-        # fasta_file = os.path.join(dest_path, f"{split}.fasta")
-        # self.sequences, self.labels = self._load_fasta(fasta_file)
         
         csv_file = os.path.join(dest_path, f"{split}.csv")
         self.data = pd.read_csv(csv_file)
@@ -411,7 +407,7 @@ class SignalPeptideDataset(Dataset):
         self.tokenizer = tokenizer
         self.return_augs = return_augs
         self.add_eos = add_eos
-        self.d_output = d_output  # needed for decoder to grab
+        self.d_output = d_output
         self.rc_aug = rc_aug
         self.return_mask = return_mask
 

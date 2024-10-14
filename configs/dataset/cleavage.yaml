@@ -1,7 +1,7 @@
 _name_: cleavage
 dataset_name: cleavage
 max_length: 1024
-dest_path: /raid_elmo/home/lr/zym/data/protein_data/fine_tuning/cleavage
+dest_path: /home/lr/zym/research/ProtHyena/data/cleavage
 tokenizer_name: char
 cache_dir: null
 add_eos: false

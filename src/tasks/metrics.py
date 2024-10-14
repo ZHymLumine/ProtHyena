@@ -405,50 +405,21 @@ def safe_roc_auc_score(logits, y):
         y_true = y.cpu().numpy()
 
     y_score = F.softmax(logits, dim=-1).cpu().numpy()
-    # 筛选掉 y_true 中为 -100 的样本
+
     valid_indices = y_true != -100
     y_true_filtered = y_true[valid_indices]
     y_score_filtered = y_score[valid_indices]
 
     y_true_one_hot = label_binarize(y_true_filtered, classes=range(n_classes))
-    # 计算每个类别的AUROC，忽略那些完全缺失的类别
 
-    auc_scores = {}  # 使用字典来记录每个类别的AUC值
+    auc_scores = {}
     metrics = {}
-    # filename = '/home/lr/zym/research/hyena-dna/outputs/phrog_attn/fold_1.log'
-    # for i in range(n_classes):
-    #     if np.sum(y_true_one_hot[:, i]) > 0:  # 确保至少有一个真实的正例
-    #         fpr, tpr, roc_thresholds = roc_curve(y_true_one_hot[:, i], y_score[:, i])
-    #         roc_auc = auc(fpr, tpr)
-
-    #         precision, recall, pr_thresholds = precision_recall_curve(y_true_one_hot[:, i], y_score[:, i])
-    #         pr_auc = auc(recall, precision)
-
-
-    #         metrics[i] = {
-    #         'fpr': fpr, 'tpr': tpr, 'roc_thresholds': roc_thresholds, 
-    #         'precision': precision, 'recall': recall, 'pr_thresholds': pr_thresholds,
-    #         }   
-    #         # write_metrics_to_file(metrics, filename)
-
-           
-    #         # auc_score = roc_auc_score(y_true_one_hot[:, i], y_score_filtered[:, i])
-    #         auc_scores[f'Class {i} roc_auc'] = roc_auc
-    #         auc_scores[f'Class {i} pr_auc'] = pr_auc
-    #     else:
-    #         # 如果没有正例，则为该类别赋值0
-    #         auc_scores[f'Class {i} roc_auc'] = 0.0
-    #         auc_scores[f'Class {i} pr_auc'] = 0.0
-    
-    # return auc_scores
 
     auc_scores = []
     for i in range(n_classes):
-        if np.sum(y_true_one_hot[:, i]) > 0:  # 确保至少有一个真实的正例
             auc_score = roc_auc_score(y_true_one_hot[:, i], y_score_filtered[:, i])
             auc_scores.append(auc_score)
     
-    # 返回平均AUROC分数，如果没有计算任何分数则返回None
     if len(auc_scores) == 0:
         return None
     else:
@@ -458,8 +429,6 @@ def roc_auc_micro(logits, y):
     logits = logits.view(-1, logits.shape[-1])
     y = y.view(-1)
     
-    # y_score = F.softmax(logits, dim=-1).cpu().numpy()
-    # print(f"y: {y.shape}, y_score: {y_score.shape}")
     return roc_auc_score(
         y.cpu().numpy(), F.softmax(logits, dim=-1).cpu().numpy()[:1], average="micro"
     )
@@ -565,7 +534,7 @@ def student_t(outs, y, nu=1.0):
     preds, y = outs.detach().cpu(), y.detach().cpu()
     diff = y - preds  
     # 计算 Student-T 损失
-    loss = torch.log(1 + (diff ** 2) / nu).mean()  # 使用 .mean() 来计算批次的平均损失
+    loss = torch.log(1 + (diff ** 2) / nu).mean() 
     
     return loss
 

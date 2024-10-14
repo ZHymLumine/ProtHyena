@@ -25,7 +25,6 @@ CUDA_VISIBLE_DEVICES=0 python -m train experiment=prot14m/prot14m_large trainer.
 CUDA_VISIBLE_DEVICES=0 python -m train experiment=prot14m/fold_class trainer.devices=1
 CUDA_VISIBLE_DEVICES=0 python -m train experiment=prot14m/signalP trainer.devices=1
 
-CUDA_VISIBLE_DEVICES=0 python -m train experiment=prot14m/stability trainer.devices=1 dataset.batch_size=128 dataset.batch_size_eval=128
+CUDA_VISIBLE_DEVICES=0 python -m train wandb=null experiment=prot14m/stability trainer.devices=1 dataset.batch_size=128 dataset.batch_size_eval=128
 
 CUDA_VISIBLE_DEVICES=1 python -m train experiment=prot14m/fluorescence trainer.devices=1 dataset.batch_size=128 dataset.batch_size_eval=128
-
