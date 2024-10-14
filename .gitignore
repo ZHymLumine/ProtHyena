@@ -11,7 +11,7 @@ data.tar.gz
 .idea/
 outputs/
 results/
-flash-attention/
+
 
 *attn*.yaml
 
