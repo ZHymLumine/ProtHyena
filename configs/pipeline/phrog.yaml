@@ -9,7 +9,7 @@ defaults:
   - /callbacks: [base, checkpoint]
 
 train:
-  monitor: val/f1_macro # Needed for plateau scheduler
+  monitor: val/accuracy # Needed for plateau scheduler
   mode: max
 
 encoder: null

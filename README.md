@@ -6,6 +6,7 @@
 
 - [Dataset](https://drive.google.com/drive/folders/1oNBFGQw3F9aoOYOQSB71PS1sfhhgwyzm?usp=sharing)
 - [Model checkpoint](https://drive.google.com/file/d/1s89PV6sNCxSEq5Qztwqs-5XUxrngbc-z/view?usp=sharing)
+- [Colab notebook](https://colab.research.google.com/drive/1kjSJbhslSX8k0XGS-JB9hAfK29z0FVZK#scrollTo=JWUc70H7Iiwd) for easy downstream inference.
 
 ## Intro
 

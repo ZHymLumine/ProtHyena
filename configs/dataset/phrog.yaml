@@ -1,16 +1,16 @@
 _name_: phrog
 dataset_name: phrog
 max_length: 1024
-dest_path: /raid_elmo/home/lr/zym/data/protein_data/fine_tuning/phrog/fold_1
+dest_path: /raid_elmo/home/lr/zym/data/protein_data/fine_tuning/phrog/fold_2
 tokenizer_name: char
 cache_dir: null
 add_eos: False
-batch_size: 256 # per GPU
+batch_size: 512 # per GPU
 batch_size_eval: 512
 num_workers: 4 # For preprocessing only
 shuffle: True
 pin_memory: True
-train_len: 71083 # fold_1:71083, fold_2:422837, fold_3:459406, fold_4:466946, fold_5:470460
+train_len: 422837 # fold_1:71083, fold_2:422837, fold_3:459406, fold_4:466946, fold_5:470460
 __l_max: ${.max_length}
 use_padding: True
 padding_side: "left"
