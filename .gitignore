@@ -126,3 +126,6 @@ dmypy.json
 .pyre/
 
 # End of https://www.gitignore.io/api/python
+
+run_train.sh
+standalone_*.py
